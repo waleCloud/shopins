@@ -6,14 +6,14 @@ import { ProductsDTO } from '../dto/productsDto';
 @Injectable()
 export class ProductsService {
   constructor(
-    @Inject(PRODUCTS_REPO) private readonly ProductsRepo: typeof Products,
+    @Inject(PRODUCTS_REPO) private readonly ProductsRepository: typeof Products,
   ) {}
 
   async getAllProducts(): Promise<Products[]> {
-    return await this.ProductsRepo.findAll<Products>();
+    return await this.ProductsRepository.findAll<Products>();
   }
 
   async createProduct(createProduct: ProductsDTO): Promise<Products> {
-    return await this.ProductsRepo.create<Products>(createProduct);
+    return await this.ProductsRepository.create<Products>(createProduct);
   }
 }

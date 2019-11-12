@@ -8,6 +8,6 @@ import { ProductsController } from './products.controller';
   imports: [DatabaseModule],
   providers: [ProductsService, ...productsProvider],
   controllers: [ProductsController],
-  exports: [ProductsService],
+  exports: [ProductsService, ...productsProvider],
 })
 export class ProductsModule {}
