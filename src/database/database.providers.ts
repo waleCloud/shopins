@@ -8,9 +8,8 @@ export const databaseProviders = [
       const sequelize = new Sequelize({
         dialect: 'mssql',
         host: 'localhost',
-        port: 1433,
         username: 'SA',
-        password: '',
+        password: 'P@ssw0rd123!',
         database: 'shopins',
       });
       sequelize.addModels([Products]);
