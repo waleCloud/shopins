@@ -6,6 +6,7 @@ export class Products extends Model<Products> {
     type: DataType.UUID,
     primaryKey: true,
     field: 'ID',
+    defaultValue: DataType.UUIDV4,
   })
   id: string;
 

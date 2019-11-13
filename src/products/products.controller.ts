@@ -1,9 +1,10 @@
-import { Controller, Get, Req, Post, Body } from '@nestjs/common';
+import { Controller, Get, Catch, Post, Body, HttpException } from '@nestjs/common';
 import { ProductsService } from './products.service';
 import { Request } from 'express';
 import { Products } from './products.entity';
 import { ProductsDTO } from 'src/dto/productsDto';
 
+@Catch(HttpException)
 @Controller('products')
 export class ProductsController {
   constructor(private readonly productService: ProductsService) {}
