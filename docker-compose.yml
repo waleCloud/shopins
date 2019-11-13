@@ -1,8 +1,13 @@
 version: "3"
+networks: 
+  app-tier:
+    driver: bridge
 services:
   web:
     container_name: "shopinsApi"
     build: .
+    networks: 
+      - app-tier
     ports: 
       - 3000:3000
     depends_on:
@@ -18,6 +23,8 @@ services:
     environment: 
       SA_PASSWORD: "${DB_PASSWORD}"
       ACCEPT_EULA: "Y"
+    networks: 
+      - app-tier
     volumes: 
       - sqlvolumes:/var/opt/mssql
 volumes:

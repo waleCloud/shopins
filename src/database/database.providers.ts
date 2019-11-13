@@ -7,7 +7,7 @@ export const databaseProviders = [
     useFactory: async () => {
       const sequelize = new Sequelize({
         dialect: 'mssql',
-        host: 'localhost',
+        host: 'db',
         username: 'SA',
         password: 'P@ssw0rd123!',
         database: 'shopins',
